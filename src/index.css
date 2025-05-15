@@ -7,3 +7,4 @@
   --color-dark-secondary: #202c37;
   --color-white-text: #fff;
 }
+@custom-variant dark (&:where(.dark, .dark *));
