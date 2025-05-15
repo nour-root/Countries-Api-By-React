@@ -6,6 +6,7 @@ function Header() {
     if (typeof window !== "undefined") {
       const stored = localStorage.getItem("theme");
       if (stored) return stored === "dark";
+      if (stored === "") return false;
       return window.matchMedia("(prefers-color-scheme: dark)").matches;
     }
     return false;
