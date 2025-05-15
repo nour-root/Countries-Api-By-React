@@ -1,21 +1,24 @@
-function Card() {
+function Card({ country }) {
+  console.log(country.flags.png);
   return (
-    <div className="bg-primary rounded flex overflow-hidden flex-col gap-4 shadow cursor-pointer hover:shadow-lg">
-      <img src={`/src/assets/Flag_of_Germany.png`} alt="" />
+    <div className="bg-primary rounded flex overflow-hidden flex-col gap-4 shadow transform transition-all duration-300 cursor-pointer hover:shadow-lg hover:-translate-y-1">
+      <img src={`${country.flags.png}`} className="h-1/2" alt="" />
       <div className="flex flex-col gap-4 px-6 py-4">
-        <h2 className="text-xl font-semibold">name</h2>
+        <h2 className="text-xl font-semibold">{country.name.common}</h2>
         <div className="space-y-2">
           <div className="flex gap-2">
             <p className="capitalize">population:</p>
-            <span className="text-Text">population</span>
+            <span className="text-Text">
+              {parseFloat(country.population).toLocaleString()}
+            </span>
           </div>
           <div className="flex gap-2">
             <p className="capitalize">Region:</p>
-            <span className="text-Text">region</span>
+            <span className="text-Text">{country.region}</span>
           </div>
           <div className="flex gap-2">
             <p className="capitalize">Capital:</p>
-            <span className="text-Text">capital</span>
+            <span className="text-Text">{country.capital}</span>
           </div>
         </div>
       </div>
