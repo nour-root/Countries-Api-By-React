@@ -52,7 +52,7 @@ function Countries() {
   return (
     <div className="py-16 grid lg:grid-cols-4 gap-8 max-sm:grid-cols-1 md:grid-cols-2 h-[1000vh]">
       {loading ? (
-        <AiOutlineLoading3Quarters className="animate-spin absolute left-1/2 top-1/2 text-6xl" />
+        <AiOutlineLoading3Quarters className="animate-spin absolute left-1/2 top-1/2 text-6xl dark:text-white" />
       ) : (
         city.map((c) => (
           <Card country={c} key={c.name.common + "-" + c.name.official} />
