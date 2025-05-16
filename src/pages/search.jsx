@@ -1,5 +1,6 @@
 import { AiOutlineSearch } from "react-icons/ai";
 import { IoIosArrowDown } from "react-icons/io";
+
 function Search() {
   return (
     <div className="flex justify-between max-md:flex-col max-md:gap-4">

@@ -14,8 +14,9 @@ function Countries() {
       .catch((error) => console.log(error))
       .finally(() => setLoading(false));
   }, []);
+
   return (
-    <div className="py-16 grid lg:grid-cols-4 gap-6 max-sm:grid-cols-1 md:grid-cols-2">
+    <div className="py-16 grid lg:grid-cols-4 gap-6 max-sm:grid-cols-1 md:grid-cols-2 h-[1000vh]">
       {loading ? (
         <AiOutlineLoading3Quarters className="animate-spin absolute left-1/2 top-1/2 text-6xl" />
       ) : (
