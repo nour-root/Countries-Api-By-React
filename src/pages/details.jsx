@@ -2,6 +2,7 @@ import { Link } from "react-router";
 import { FaArrowLeft } from "react-icons/fa6";
 import { useEffect, useState } from "react";
 import axios from "axios";
+
 export default function Details({ country }) {
   const [borderCountries, setBorderCountries] = useState([]);
   useEffect(() => {

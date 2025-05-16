@@ -4,7 +4,7 @@ import { useRegion } from "../Context/regionContext";
 import { useName } from "../Context/nameContext";
 import { useLoading } from "../Context/loadingContext";
 function Search() {
-  const { setRegion } = useRegion();
+  const { region, setRegion } = useRegion();
   const { name, setName } = useName();
   const { loading } = useLoading();
   return (
@@ -33,7 +33,7 @@ function Search() {
         }}
         className="relative dark:text-white cursor-pointer pointer-events-auto w-[250px] flex items-center justify-between bg-primary dark:bg-dark-primary rounded shadow px-8 h-14"
       >
-        <p>Filter By Region</p>
+        <p>{region || "Filter By Region"}</p>
         <IoIosArrowDown className="mt-1 arrow transform rotate-0 transition-all duration-200" />
         <div
           onClick={(e) => setRegion(e.target.innerText)}
