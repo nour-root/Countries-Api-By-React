@@ -3,12 +3,10 @@ import { useParams } from "react-router";
 import GetByNameCountry from "../services/getNameCountry";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import Details from "./details";
-import { useLoading } from "../Context/loadingContext";
 export default function DetailsPage() {
   const { countryName } = useParams();
   const [country, setCountry] = useState({});
-  // const [loading, setLoading] = useState(true);
-  const { loading, setLoading } = useLoading();
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     GetByNameCountry(countryName)
       .then((res) => {
