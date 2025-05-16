@@ -21,6 +21,7 @@ function Header() {
     }
     if (localStorage.getItem("theme") === "dark") {
       root.classList.add("dark");
+      document.body.classList.add("dark:bg-dark-secondary");
     } else {
       root.classList.remove("dark");
     }
