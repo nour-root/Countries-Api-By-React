@@ -5,11 +5,12 @@ import GetAllCountries from "../services/getAllCountries.js";
 import { useRegion } from "../Context/regionContext.jsx";
 import axios from "axios";
 import { useName } from "../Context/nameContext.jsx";
-
+import { useLoading } from "../Context/loadingContext.jsx";
 function Countries() {
   const { region } = useRegion();
   const { name } = useName();
-  const [loading, setLoading] = useState(true);
+  const { loading, setLoading } = useLoading();
+  // const [loading, setLoading] = useState(true);
   const [city, setCity] = useState([]);
   useEffect(() => {
     if (name) {
@@ -22,6 +23,7 @@ function Countries() {
         } catch (error) {
           console.error("Error fetching border countries", error);
         }
+        setLoading(false);
       };
       fetchNameCountries();
     } else if (region) {
@@ -31,10 +33,10 @@ function Countries() {
             `https://restcountries.com/v3.1/region/${region}`
           );
           setCity(response.data);
-          setLoading(false);
         } catch (error) {
           console.error("Error fetching border countries", error);
         }
+        setLoading(false);
       };
       fetchRegionCountries();
     } else {
@@ -45,7 +47,7 @@ function Countries() {
         .catch((error) => console.log(error))
         .finally(() => setLoading(false));
     }
-  }, [region, name]);
+  }, [region, name, loading]);
 
   return (
     <div className="py-16 grid lg:grid-cols-4 gap-8 max-sm:grid-cols-1 md:grid-cols-2 h-[1000vh]">

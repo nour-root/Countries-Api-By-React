@@ -3,7 +3,7 @@ import { Link } from "react-router";
 function Card({ country }) {
   return (
     <Link to={`/${country.name.common}`}>
-      <div className="bg-primary h-[380px] dark:bg-dark-primary rounded flex overflow-hidden flex-col gap-4 shadow transform transition-all duration-200 cursor-pointer hover:shadow-lg hover:-translate-y-1">
+      <div className="bg-primary h-[400px] dark:bg-dark-primary rounded flex overflow-hidden flex-col gap-4 shadow transform transition-all duration-200 cursor-pointer hover:shadow-lg hover:-translate-y-1">
         <img
           src={`${country.flags.png}`}
           className="h-1/2"

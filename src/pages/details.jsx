@@ -99,7 +99,7 @@ export default function Details({ country }) {
           </div>
           <div className="flex items-center w-full max-md:flex-wrap">
             <h2 className="text-xl font-semibold max-md:mb-4 dark:text-white">
-              Border Countries:
+              Border Countries :
             </h2>
             <div className="flex gap-3 ml-1 max-md:w-full justify-center flex-wrap">
               {borderCountries.length > 0 ? (
@@ -118,7 +118,7 @@ export default function Details({ country }) {
                   </Link>
                 ))
               ) : (
-                <p>No border countries</p>
+                <p className="dark:text-white"> &nbsp; No border countries</p>
               )}
             </div>
           </div>
