@@ -27,8 +27,10 @@ function Header() {
   }, [darkMode]);
 
   return (
-    <header className="relative z-10 bg-primary dark:text-white-text dark:bg-dark-primary shadow flex justify-between px-8 py-6">
-      <h1 className="capitalize font-semibold text-xl">where in the world </h1>
+    <header className="relative z-10 bg-primary dark:text-white-text dark:bg-dark-primary shadow flex justify-between max-sm:px-6 px-8 py-6">
+      <h1 className="capitalize font-semibold text-xl max-sm:text-lg">
+        where in the world{" "}
+      </h1>
       <button
         onClick={() => {
           setDarkMode(!darkMode);
