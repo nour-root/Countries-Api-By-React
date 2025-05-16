@@ -1,22 +1,24 @@
 import { AiOutlineSearch } from "react-icons/ai";
 import { IoIosArrowDown } from "react-icons/io";
-
+import { useRegion } from "../Context/regionContext";
+import { useName } from "../Context/nameContext";
 function Search() {
+  const { setRegion } = useRegion();
+  const { name, setName } = useName();
   return (
     <div className="flex justify-between max-md:flex-col max-md:gap-4">
-      <form
-        action=""
-        className=" flex items-center gap-4 bg-primary dark:bg-dark-primary rounded shadow min-w-1/3 px-4 py-3"
-      >
+      <div className=" flex items-center gap-4 bg-primary dark:bg-dark-primary rounded shadow min-w-1/3 px-4 py-3">
         <button>
           <AiOutlineSearch className="text-2xl text-Text dark:text-white" />
         </button>
         <input
+          value={name}
+          onChange={(e) => setName(e.target.value)}
           type="text"
           placeholder="Enter Country"
-          className="focus:outline-0 dark:text-white"
+          className="focus:outline-0 dark:text-white capitalize"
         />
-      </form>
+      </div>
       <div
         onClick={() => {
           document.querySelector(".dropDown").classList.toggle("scale-100");
@@ -26,7 +28,10 @@ function Search() {
       >
         <p>Filter By Region</p>
         <IoIosArrowDown className="mt-1 arrow transform rotate-0 transition-all duration-200" />
-        <div className="absolute overflow-hidden *:hover:bg-secondary *:hover:dark:bg-dark-secondary dropDown shadow transition-all duration-150 transform origin-top scale-0 z-10  bg-primary dark:bg-dark-primary top-16 left-0  h-fit w-1/1 rounded">
+        <div
+          onClick={(e) => setRegion(e.target.innerText)}
+          className="absolute overflow-hidden *:hover:bg-secondary *:hover:dark:bg-dark-secondary dropDown shadow transition-all duration-150 transform origin-top scale-0 z-10  bg-primary dark:bg-dark-primary top-16 left-0  h-fit w-1/1 rounded"
+        >
           <p className="cursor-pointer px-4 py-2">Africa</p>
           <p className="cursor-pointer px-4 py-2">America</p>
           <p className="cursor-pointer px-4 py-2">Asia</p>

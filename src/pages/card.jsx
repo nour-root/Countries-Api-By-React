@@ -3,8 +3,12 @@ import { Link } from "react-router";
 function Card({ country }) {
   return (
     <Link to={`/${country.name.common}`}>
-      <div className="bg-primary h-[350px] dark:bg-dark-primary rounded flex overflow-hidden flex-col gap-4 shadow transform transition-all duration-200 cursor-pointer hover:shadow-lg hover:-translate-y-1">
-        <img src={`${country.flags.png}`} className="h-1/2" alt="" />
+      <div className="bg-primary h-[380px] dark:bg-dark-primary rounded flex overflow-hidden flex-col gap-4 shadow transform transition-all duration-200 cursor-pointer hover:shadow-lg hover:-translate-y-1">
+        <img
+          src={`${country.flags.png}`}
+          className="h-1/2"
+          alt={country.flags.alt}
+        />
         <div className="flex flex-col gap-4 px-6 py-2">
           <h2 className="text-xl font-semibold dark:text-white">
             {country.name.common}
