@@ -10,7 +10,6 @@ function Countries() {
   const { region } = useRegion();
   const { name } = useName();
   const { loading, setLoading } = useLoading();
-  // const [loading, setLoading] = useState(true);
   const [city, setCity] = useState([]);
   useEffect(() => {
     if (name) {
