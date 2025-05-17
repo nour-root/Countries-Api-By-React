@@ -43,7 +43,7 @@ function Header() {
         ) : (
           <GoSun className="text-xl transform transition-all duration-100" />
         )}
-        <p>Dark Mode</p>
+        <p>{darkMode ? "light" : "dark"} Mode</p>
       </button>
     </header>
   );
